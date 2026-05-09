@@ -1,322 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Surprise 💙</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+<title>For My Bebdu 💙</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
+}body{ font-family:Poppins,sans-serif; background:linear-gradient(180deg,#4da3ff,#9ed0ff); overflow-x:hidden; color:#fff; }
 
-body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(to bottom,#58a9ff,#b8ddff);
-overflow:hidden;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
+.slide{ display:none; min-height:100vh; padding:24px; justify-content:center; align-items:center; flex-direction:column; text-align:center; }
 
-/* CARD */
+.active{ display:flex; }
 
-.card{
-width:100%;
-max-width:420px;
-background:rgba(255,255,255,0.9);
-border-radius:30px;
-padding:25px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
+.card{ background:#ffffffdd; color:#2a63b8; border-radius:28px; padding:28px; max-width:430px; width:100%; box-shadow:0 20px 40px rgba(0,0,0,.15); position:relative; }
 
-/* TITLE */
+h1,h2{ margin-bottom:12px; }
 
-h1{
-color:#2b65c7;
-margin-bottom:20px;
-font-size:30px;
-}
+.btn{ border:none; border-radius:999px; padding:14px 24px; font-weight:700; font-size:18px; cursor:pointer; background:#4d95ff; color:#fff; margin:8px; box-shadow:0 10px 18px rgba(0,0,0,.12); }
 
-/* CAKE */
+.btn.alt{ background:#fff; color:#4d95ff; }
 
-.cake-area{
-position:relative;
-width:280px;
-height:300px;
-margin:auto;
-animation:bounce 2s infinite;
-}
+#no{ position:absolute; }
 
-/* BOTTOM LAYER */
+.passWrap{ display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:center; }
 
-.cake-bottom{
-position:absolute;
-bottom:0;
-width:280px;
-height:120px;
-background:#9dd8ff;
-border-radius:25px;
-}
+.stitch{ font-size:110px; }
 
-/* TOP LAYER */
+.dots{ display:flex; gap:10px; justify-content:center; margin:8px 0 12px; }
 
-.cake-top{
-position:absolute;
-bottom:95px;
-left:40px;
-width:200px;
-height:90px;
-background:#9dd8ff;
-border-radius:22px;
-}
+.dot{ width:16px; height:16px; border-radius:50%; background:#dcecff; }
 
-/* WHITE CREAM */
+.fill{ background:#4d95ff; }
 
-.cake-bottom::before,
-.cake-top::before{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:35px;
-background:white;
-border-radius:20px;
-}
+.pad{ display:grid; grid-template-columns:repeat(3,70px); gap:12px; justify-content:center; }
 
-/* CREAM DRIPS */
+.key{ width:70px; height:70px; border-radius:50%; border:none; background:#4d95ff; color:#fff; font-size:28px; font-weight:700; }
 
-.cake-bottom::after{
-content:'';
-position:absolute;
-top:20px;
-left:0;
-width:100%;
-height:40px;
-background:
-radial-gradient(circle at 20px 0,#fff 18px,transparent 19px),
-radial-gradient(circle at 60px 0,#fff 18px,transparent 19px),
-radial-gradient(circle at 100px 0,#fff 18px,transparent 19px),
-radial-gradient(circle at 140px 0,#fff 18px,transparent 19px),
-radial-gradient(circle at 180px 0,#fff 18px,transparent 19px),
-radial-gradient(circle at 220px 0,#fff 18px,transparent 19px),
-radial-gradient(circle at 260px 0,#fff 18px,transparent 19px);
-}
+/* NEW CAKE */
 
-.cake-top::after{
-content:'';
-position:absolute;
-top:18px;
-left:0;
-width:100%;
-height:35px;
-background:
-radial-gradient(circle at 15px 0,#fff 15px,transparent 16px),
-radial-gradient(circle at 50px 0,#fff 15px,transparent 16px),
-radial-gradient(circle at 85px 0,#fff 15px,transparent 16px),
-radial-gradient(circle at 120px 0,#fff 15px,transparent 16px),
-radial-gradient(circle at 155px 0,#fff 15px,transparent 16px),
-radial-gradient(circle at 190px 0,#fff 15px,transparent 16px);
-}
+.cake-area{ position:relative; width:260px; height:260px; margin:10px auto; animation:bounce 2s infinite; }
 
-/* SPRINKLES */
+.bottom-layer{ position:absolute; bottom:0; width:260px; height:110px; background:#9fd8ff; border-radius:24px; }
 
-.sprinkle{
-position:absolute;
-width:10px;
-height:4px;
-border-radius:10px;
-}
+.top-layer{ position:absolute; bottom:85px; left:35px; width:190px; height:85px; background:#9fd8ff; border-radius:20px; }
 
-.s1{background:#ff69b4;top:40px;left:30px;}
-.s2{background:#ffd966;top:60px;left:80px;}
-.s3{background:#7ee0ff;top:50px;left:140px;}
-.s4{background:#c084fc;top:70px;left:170px;}
+.bottom-layer::before, .top-layer::before{ content:''; position:absolute; top:0; left:0; width:100%; height:30px; background:white; border-radius:20px; }
 
-.s5{background:#ff69b4;top:60px;left:40px;}
-.s6{background:#ffd966;top:90px;left:100px;}
-.s7{background:#7ee0ff;top:70px;left:180px;}
-.s8{background:#c084fc;top:95px;left:240px;}
+.candles{ position:absolute; top:10px; left:50%; transform:translateX(-50%); display:flex; gap:10px; z-index:5; }
 
-/* CANDLES */
+.candle{ width:12px; height:50px; background:#ffb6d9; border-radius:10px; position:relative; }
 
-.candles{
-position:absolute;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:12px;
-z-index:5;
-}
+.flame{ position:absolute; top:-16px; left:50%; transform:translateX(-50%); width:12px; height:16px; background:orange; border-radius:50%; box-shadow:0 0 10px yellow; animation:flicker .8s infinite alternate; }
 
-.candle{
-width:14px;
-height:60px;
-background:#ffb6d9;
-border-radius:10px;
-position:relative;
-}
+.off{ opacity:0; transform:translateX(-50%) translateY(-10px); transition:1s; }
 
-.flame{
-position:absolute;
-top:-20px;
-left:50%;
-transform:translateX(-50%);
-width:14px;
-height:20px;
-background:gold;
-border-radius:50%;
-box-shadow:0 0 15px orange;
-animation:flicker .8s infinite alternate;
-}
+#birthdayText{ margin-top:18px; font-size:24px; font-weight:700; color:#2b65c7; display:none; }
 
-/* FLAME OUT */
+.fadeIn{ animation:popIn 1.2s ease forwards; }
 
-.off{
-opacity:0;
-transform:translateX(-50%) translateY(-12px);
-transition:1s;
-}
+.letterBtn{ margin-top:16px; }
 
-/* BUTTON */
+.modal{ display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); padding:18px; justify-content:center; align-items:center; }
 
-button{
-margin-top:20px;
-border:none;
-background:#4d95ff;
-color:white;
-padding:14px 28px;
-font-size:18px;
-border-radius:999px;
-cursor:pointer;
-font-weight:700;
-box-shadow:0 10px 18px rgba(0,0,0,0.12);
-}
+.paper{ background:#fffdf8; color:#443327; max-width:760px; width:100%; max-height:90vh; overflow:auto; border-radius:18px; padding:26px; box-shadow:0 25px 50px rgba(0,0,0,.22); text-align:left; }
 
-/* TEXT */
+.paper h2{ font-family:'Great Vibes',cursive; font-size:54px; color:#7d5a3a; text-align:center; }
 
-#msg{
-margin-top:20px;
-font-size:28px;
-font-weight:700;
-color:#2b65c7;
-opacity:0;
-transform:scale(0.8);
-transition:1s;
-}
+.paper p{ font-family:'Cormorant Garamond',serif; font-size:28px; line-height:1.35; margin:12px 0; }
 
-.show{
-opacity:1 !important;
-transform:scale(1) !important;
-}
+.gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; width:100%; max-width:800px; }
 
-/* ANIMATION */
+.ph{ background:#ffffffcc; border-radius:18px; padding:8px; color:#2a63b8; }
 
-@keyframes bounce{
-0%,100%{
-transform:translateY(0);
-}
-50%{
-transform:translateY(-8px);
-}
-}
+.ph img{ width:100%; border-radius:14px; }
 
-@keyframes flicker{
-from{
-transform:translateX(-50%) scale(1);
-}
-to{
-transform:translateX(-50%) scale(1.15);
-}
-}
+.audioCard{ background:#ffffffdd; color:#2a63b8; border-radius:26px; padding:28px; max-width:430px; width:100%; }
 
-</style>
+@keyframes bounce{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+@keyframes popIn{ 0%{opacity:0;transform:scale(.6)} 100%{opacity:1;transform:scale(1)} }
+
+@keyframes flicker{ from{transform:translateX(-50%) scale(1)} to{transform:translateX(-50%) scale(1.15)} }
+
+@media(max-width:700px){ .passWrap{ grid-template-columns:1fr; }
+
+.paper p{ font-size:24px; }
+
+.paper h2{ font-size:44px; } } </style>
+
 </head>
-
-<body>
-
-<div class="card">
-
-<h1>Happy Birthday Bebduu 🤭💙</h1>
-
-<div class="cake-area">
-
-<!-- CANDLES -->
-
+<body><section class='slide active' id='s1'>
+<div class='card'>
+<h1>Hey Bebdu 🤭</h1>
+<p>Do you want to open your surprise?</p>
+<button class='btn' onclick='go(2)'>Yes 💙</button>
+<button class='btn alt' id='no'>No 🙈</button>
+</div>
+</section><section class='slide' id='s2'>
+<div class='card'>
+<div class='passWrap'>
+<div>
+<div class='stitch'>🩵</div>
+<div style='font-size:14px'>your stitch is waiting 🤭</div>
+</div>
+<div>
+<h2>Enter a passcode</h2>
+<div class='dots'>
+<span class='dot' id='d1'></span>
+<span class='dot' id='d2'></span>
+<span class='dot' id='d3'></span>
+<span class='dot' id='d4'></span>
+</div>
+<div class='pad' id='pad'></div>
+<div style='margin-top:10px;font-size:13px'>its our fav code</div>
+</div>
+</div>
+</div>
+</section><section class='slide' id='s3'>
+<div class='card'><div class="cake-area">
 <div class="candles">
-
 <div class="candle"><div class="flame"></div></div>
 <div class="candle"><div class="flame"></div></div>
 <div class="candle"><div class="flame"></div></div>
 <div class="candle"><div class="flame"></div></div>
 <div class="candle"><div class="flame"></div></div>
-<div class="candle"><div class="flame"></div></div>
-<div class="candle"><div class="flame"></div></div>
+</div><div class="top-layer"></div>
+<div class="bottom-layer"></div>
+</div><button class='btn' onclick='blowCandles()'>BLOW 🎂</button>
 
-</div>
-
-<!-- TOP CAKE -->
-
-<div class="cake-top">
-
-<div class="sprinkle s1"></div>
-<div class="sprinkle s2"></div>
-<div class="sprinkle s3"></div>
-<div class="sprinkle s4"></div>
-
-</div>
-
-<!-- BOTTOM CAKE -->
-
-<div class="cake-bottom">
-
-<div class="sprinkle s5"></div>
-<div class="sprinkle s6"></div>
-<div class="sprinkle s7"></div>
-<div class="sprinkle s8"></div>
-
-</div>
-
-</div>
-
-<button onclick="blowCandles()">
-BLOW 🎂
-</button>
-
-<div id="msg">
+<div id="birthdayText">
 Happy Birthday My Bebduu 🤭❤️
+</div></div>
+</section><section class='slide' id='s4'>
+<div class='card'>
+<h2>Something for you 💌</h2>
+<p>I made this with love.</p>
+<button class='btn letterBtn' onclick="document.getElementById('modal').style.display='flex'">Open Letter</button>
+<button class='btn alt' onclick='go(5)'>Next</button>
 </div>
-
+</section><section class='slide' id='s5'>
+<h2>Photos of You 📸</h2>
+<div class='gallery'>
+<div class='ph'><img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+1'></div>
+<div class='ph'><img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+2'></div>
+<div class='ph'><img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+3'></div>
 </div>
+<button class='btn' onclick='go(6)' style='margin-top:18px'>Next</button>
+</section><section class='slide' id='s6'>
+<div class='audioCard'>
+<h2>One Last Thing 🎤</h2>
+<audio controls style='width:100%'>
+<source src='voice.mp3'>
+</audio>
+<p style='margin-top:10px'>Add your voice note as voice.mp3</p>
+</div>
+</section><div class='modal' id='modal'>
+<div class='paper'>
+<h2>Happy Birthday, my love ❤️</h2>
+<p>On this day, 1st June 2004, someone was born🤭… someone I didn’t even know back then would one day become the most special person in my life. And now, I can’t imagine a single moment without you in it🫠.</p>
+<p>I don’t even know where to start, because no words ever feel enough when it comes to you. But I’ll try, because you deserve to know just how deeply you are loved.😅</p>
+<p>These past 8 months with you have been the most beautiful part of my life. You came into my world and suddenly everything felt warmer, brighter, happier🙃. You didn’t just become a part of my life—you became the reason behind my smiles, my comfort on hard days, and my favorite person in every moment🥹.</p>
+<p>You are my yellow person, my sunflower 🌻—the one who brings light into my life even on the dullest days. Just like a sunflower turns toward the sun, I find myself always turning toward you, always choosing you, again and again😄🫂.</p>
+<p>I made this website for you, and honestly, it’s just a small thing compared to what I feel for you. It’s just a tiny piece of my love. Because the truth is, I would do anything to make you feel special, to make you feel seen, to remind you how important you are to me. You deserve that and so much more🫶🏻😭.</p>
+<p>Thank you for making these 8 months so magical✨. Thank you for being you—for your love, your care, your presence. You’ve made my life more beautiful than I ever imagined🧿.</p>
+<p>I love you more than words can explain…</p>
+<p>I love you to the moon and back, my bachhaa 🫂</p>
+<p style='text-align:right'><b>Forever yours.</b></p>
+<button class='btn' onclick="document.getElementById('modal').style.display='none'">Close</button>
+</div>
+</div><script>
+function go(n){
+document.querySelectorAll('.slide').forEach(x=>x.classList.remove('active'));
+document.getElementById('s'+n).classList.add('active');
+}
 
-<script>
+const no=document.getElementById('no');
+
+no.onmouseover=()=>{
+no.style.left=Math.random()*75+'%';
+no.style.top=Math.random()*80+'%';
+};
+
+const pad=document.getElementById('pad');
+let code='';
+const pass='1309';
+
+for(let i=1;i<=9;i++) add(i);
+add('⌫');
+add(0);
+add('✓');
+
+function add(v){
+let b=document.createElement('button');
+b.className='key';
+b.textContent=v;
+b.onclick=()=>press(v);
+pad.appendChild(b);
+}
+
+function press(v){
+
+if(v==='⌫'){
+code=code.slice(0,-1);
+}
+else if(v==='✓'){
+if(code===pass){
+go(3);
+}
+else{
+code='';
+}
+}
+else{
+if(code.length<4){
+code+=v;
+}
+}
+
+for(let i=1;i<=4;i++){
+document.getElementById('d'+i).className='dot'+(i<=code.length?' fill':'');
+}
+}
 
 function blowCandles(){
-
-document.querySelectorAll('.flame')
-.forEach(flame=>{
-
+document.querySelectorAll('.flame').forEach(flame=>{
 flame.classList.add('off');
-
 });
 
-const msg=document.getElementById('msg');
+document.getElementById('birthdayText').style.display='block';
 
-msg.classList.add('show');
-
+setTimeout(()=>{
+go(4);
+},2500);
 }
-
-</script>
-
-</body>
+</script></body>
 </html>
