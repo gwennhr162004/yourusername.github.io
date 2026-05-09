@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For My Bebdu 💙</title>
 
@@ -11,413 +12,408 @@
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  font-family:Poppins,sans-serif;
-  background:linear-gradient(180deg,#4da3ff,#9ed0ff);
-  overflow-x:hidden;
-  color:#fff;
+font-family:Poppins,sans-serif;
+background:linear-gradient(180deg,#4da3ff,#9ed0ff);
+overflow-x:hidden;
+color:#fff;
 }
 
-/* Slides */
+/* SLIDES */
 
 .slide{
-  display:none;
-  min-height:100vh;
-  padding:24px;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
+display:none;
+min-height:100vh;
+padding:24px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
 }
 
 .active{
-  display:flex;
+display:flex;
 }
 
-/* Cards */
+/* CARD */
 
 .card{
-  background:#ffffffdd;
-  color:#2a63b8;
-  border-radius:28px;
-  padding:28px;
-  max-width:430px;
-  width:100%;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
+background:#ffffffdd;
+color:#2a63b8;
+border-radius:28px;
+padding:28px;
+max-width:430px;
+width:100%;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
 }
-
-/* Headings */
 
 h1,h2{
-  margin-bottom:12px;
+margin-bottom:12px;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .btn{
-  border:none;
-  border-radius:999px;
-  padding:14px 24px;
-  font-weight:700;
-  font-size:18px;
-  cursor:pointer;
-  background:#4d95ff;
-  color:#fff;
-  margin:8px;
-  box-shadow:0 10px 18px rgba(0,0,0,.12);
+border:none;
+border-radius:999px;
+padding:14px 24px;
+font-weight:700;
+font-size:18px;
+cursor:pointer;
+background:#4d95ff;
+color:#fff;
+margin:8px;
+box-shadow:0 10px 18px rgba(0,0,0,.12);
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 .btn.alt{
-  background:#fff;
-  color:#4d95ff;
+background:#fff;
+color:#4d95ff;
 }
 
 #no{
-  position:absolute;
+position:absolute;
 }
 
-/* Passcode */
+/* PASSCODE */
 
 .passWrap{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+align-items:center;
 }
 
 .stitch{
-  font-size:110px;
+font-size:110px;
 }
 
 .dots{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  margin:8px 0 12px;
+display:flex;
+gap:10px;
+justify-content:center;
+margin:8px 0 12px;
 }
 
 .dot{
-  width:16px;
-  height:16px;
-  border-radius:50%;
-  background:#dcecff;
+width:16px;
+height:16px;
+border-radius:50%;
+background:#dcecff;
 }
 
 .fill{
-  background:#4d95ff;
+background:#4d95ff;
 }
 
 .pad{
-  display:grid;
-  grid-template-columns:repeat(3,70px);
-  gap:12px;
-  justify-content:center;
+display:grid;
+grid-template-columns:repeat(3,70px);
+gap:12px;
+justify-content:center;
 }
 
 .key{
-  width:70px;
-  height:70px;
-  border-radius:50%;
-  border:none;
-  background:#4d95ff;
-  color:#fff;
-  font-size:28px;
-  font-weight:700;
+width:70px;
+height:70px;
+border-radius:50%;
+border:none;
+background:#4d95ff;
+color:#fff;
+font-size:28px;
+font-weight:700;
+cursor:pointer;
 }
 
-/* Cake */
+/* CAKE */
 
-.cakeCard{
-  position:relative;
+.cake-box{
+position:relative;
+width:320px;
+height:320px;
+margin:auto;
+animation:bounce 2s infinite;
 }
 
-.cakeWrap{
-  position:relative;
-  width:320px;
-  margin:auto;
-  margin-top:10px;
+/* TOP CAKE */
+
+.top-layer{
+position:absolute;
+width:220px;
+height:95px;
+background:#a9ddff;
+left:50px;
+top:90px;
+border-radius:22px;
+z-index:2;
 }
 
-/* Bottom Layer */
+/* BOTTOM CAKE */
 
-.bottomCake{
-  width:320px;
-  height:120px;
-  background:#9ed8ff;
-  border-radius:25px;
-  position:relative;
-  margin:auto;
-  box-shadow:0 15px 20px rgba(0,0,0,.12);
+.bottom-layer{
+position:absolute;
+width:320px;
+height:120px;
+background:#a9ddff;
+bottom:30px;
+border-radius:25px;
 }
 
-.bottomCream{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:45px;
-  background:white;
-  border-radius:25px;
-  overflow:hidden;
+/* CREAM */
+
+.top-cream,
+.bottom-cream{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:35px;
+background:white;
+border-radius:20px;
+overflow:hidden;
 }
 
-.bottomCream::after{
-  content:'';
-  position:absolute;
-  width:100%;
-  height:40px;
-  bottom:-18px;
-  left:0;
-  background:
-  radial-gradient(circle at 20px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 60px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 100px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 140px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 180px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 220px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 260px 0,#fff 20px,transparent 21px),
-  radial-gradient(circle at 300px 0,#fff 20px,transparent 21px);
+.top-cream::after{
+content:'';
+position:absolute;
+width:100%;
+height:40px;
+top:18px;
+left:0;
+background:
+radial-gradient(circle at 15px 0,#fff 15px,transparent 16px),
+radial-gradient(circle at 50px 0,#fff 15px,transparent 16px),
+radial-gradient(circle at 85px 0,#fff 15px,transparent 16px),
+radial-gradient(circle at 120px 0,#fff 15px,transparent 16px),
+radial-gradient(circle at 155px 0,#fff 15px,transparent 16px),
+radial-gradient(circle at 190px 0,#fff 15px,transparent 16px);
 }
 
-/* Top Layer */
-
-.topCake{
-  width:240px;
-  height:100px;
-  background:#9ed8ff;
-  border-radius:25px;
-  position:absolute;
-  top:-90px;
-  left:40px;
-  box-shadow:0 10px 18px rgba(0,0,0,.12);
+.bottom-cream::after{
+content:'';
+position:absolute;
+width:100%;
+height:40px;
+top:18px;
+left:0;
+background:
+radial-gradient(circle at 20px 0,#fff 18px,transparent 19px),
+radial-gradient(circle at 60px 0,#fff 18px,transparent 19px),
+radial-gradient(circle at 100px 0,#fff 18px,transparent 19px),
+radial-gradient(circle at 140px 0,#fff 18px,transparent 19px),
+radial-gradient(circle at 180px 0,#fff 18px,transparent 19px),
+radial-gradient(circle at 220px 0,#fff 18px,transparent 19px),
+radial-gradient(circle at 260px 0,#fff 18px,transparent 19px);
 }
 
-.topCream{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:42px;
-  background:white;
-  border-radius:25px;
-  overflow:hidden;
-}
-
-.topCream::after{
-  content:'';
-  position:absolute;
-  width:100%;
-  height:40px;
-  bottom:-18px;
-  left:0;
-  background:
-  radial-gradient(circle at 20px 0,#fff 18px,transparent 19px),
-  radial-gradient(circle at 60px 0,#fff 18px,transparent 19px),
-  radial-gradient(circle at 100px 0,#fff 18px,transparent 19px),
-  radial-gradient(circle at 140px 0,#fff 18px,transparent 19px),
-  radial-gradient(circle at 180px 0,#fff 18px,transparent 19px),
-  radial-gradient(circle at 220px 0,#fff 18px,transparent 19px);
-}
-
-/* Sprinkles */
+/* SPRINKLES */
 
 .sprinkle{
-  position:absolute;
-  width:10px;
-  height:4px;
-  border-radius:10px;
+position:absolute;
+width:10px;
+height:4px;
+border-radius:10px;
 }
 
-.p1{background:#ff69b4;top:20px;left:30px}
-.p2{background:#ffd966;top:60px;left:70px}
-.p3{background:#b197fc;top:80px;left:120px}
-.p4{background:#7ee0ff;top:40px;left:200px}
-.p5{background:#ffb347;top:90px;left:260px}
-.p6{background:#ff69b4;top:30px;left:140px}
-.p7{background:#ffd966;top:70px;left:180px}
-.p8{background:#7ee0ff;top:50px;left:300px}
+.s1{background:#ff69b4;top:50px;left:30px}
+.s2{background:#ffd966;top:65px;left:90px}
+.s3{background:#7ee0ff;top:45px;left:150px}
+.s4{background:#b197fc;top:75px;left:190px}
 
-/* Candles */
+.s5{background:#ff69b4;top:60px;left:40px}
+.s6{background:#ffd966;top:90px;left:120px}
+.s7{background:#7ee0ff;top:70px;left:210px}
+.s8{background:#b197fc;top:95px;left:270px}
+
+/* CANDLES */
 
 .candles{
-  position:absolute;
-  top:-165px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:14px;
+position:absolute;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:12px;
+z-index:5;
 }
 
 .candle{
-  width:16px;
-  height:55px;
-  background:#ffb6d9;
-  border-radius:10px;
-  position:relative;
+width:14px;
+height:60px;
+background:#ffb6d9;
+border-radius:10px;
+position:relative;
 }
 
 .flame{
-  position:absolute;
-  top:-22px;
-  left:50%;
-  transform:translateX(-50%);
-  width:16px;
-  height:22px;
-  background:gold;
-  border-radius:50% 50% 50% 50%;
-  box-shadow:0 0 18px orange;
-  animation:flicker .8s infinite alternate;
+position:absolute;
+width:14px;
+height:20px;
+background:gold;
+border-radius:50%;
+top:-20px;
+left:50%;
+transform:translateX(-50%);
+box-shadow:0 0 18px orange;
+animation:flicker .8s infinite alternate;
 }
 
-@keyframes flicker{
-  from{
-    transform:translateX(-50%) scale(1);
-  }
-  to{
-    transform:translateX(-50%) scale(1.12);
-  }
-}
+/* EXTINGUISH */
 
 .off{
-  opacity:0;
-  transform:translateX(-50%) translateY(-12px);
-  transition:1s;
+opacity:0;
+transform:translateX(-50%) translateY(-15px);
+transition:1s;
 }
 
-/* Message */
+/* MESSAGE */
 
 .msg{
-  margin-top:24px;
-  font-size:28px;
-  font-weight:700;
+margin-top:18px;
+font-size:28px;
+font-weight:700;
 }
 
-/* Animations */
-
-.fadeIn{
-  animation:popIn 1.2s ease forwards;
-}
-
-@keyframes popIn{
-  0%{
-    opacity:0;
-    transform:scale(.6);
-  }
-  100%{
-    opacity:1;
-    transform:scale(1);
-  }
-}
-
-@keyframes bounce{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-8px);
-  }
-}
-
-/* Letter */
+/* LETTER */
 
 .letterBtn{
-  margin-top:16px;
+margin-top:16px;
 }
 
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  padding:18px;
-  justify-content:center;
-  align-items:center;
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+padding:18px;
+justify-content:center;
+align-items:center;
 }
 
 .paper{
-  background:#fffdf8;
-  color:#443327;
-  max-width:760px;
-  width:100%;
-  max-height:90vh;
-  overflow:auto;
-  border-radius:18px;
-  padding:26px;
-  box-shadow:0 25px 50px rgba(0,0,0,.22);
-  text-align:left;
+background:#fffdf8;
+color:#443327;
+max-width:760px;
+width:100%;
+max-height:90vh;
+overflow:auto;
+border-radius:18px;
+padding:26px;
+box-shadow:0 25px 50px rgba(0,0,0,.22);
+text-align:left;
 }
 
 .paper h2{
-  font-family:'Great Vibes',cursive;
-  font-size:54px;
-  color:#7d5a3a;
-  text-align:center;
+font-family:'Great Vibes',cursive;
+font-size:54px;
+color:#7d5a3a;
+text-align:center;
 }
 
 .paper p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:28px;
-  line-height:1.35;
-  margin:12px 0;
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+line-height:1.35;
+margin:12px 0;
 }
 
-/* Gallery */
+/* GALLERY */
 
 .gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:14px;
-  width:100%;
-  max-width:800px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:14px;
+width:100%;
+max-width:800px;
 }
 
 .ph{
-  background:#ffffffcc;
-  border-radius:18px;
-  padding:8px;
-  color:#2a63b8;
+background:#ffffffcc;
+border-radius:18px;
+padding:8px;
 }
 
 .ph img{
-  width:100%;
-  border-radius:14px;
+width:100%;
+border-radius:14px;
 }
 
-/* Audio */
+/* AUDIO */
 
 .audioCard{
-  background:#ffffffdd;
-  color:#2a63b8;
-  border-radius:26px;
-  padding:28px;
-  max-width:430px;
-  width:100%;
+background:#ffffffdd;
+color:#2a63b8;
+border-radius:26px;
+padding:28px;
+max-width:430px;
+width:100%;
 }
 
-/* Responsive */
+/* ANIMATIONS */
+
+.fadeIn{
+animation:popIn 1.2s ease forwards;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+
+@keyframes popIn{
+0%{
+opacity:0;
+transform:scale(.6);
+}
+100%{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@keyframes flicker{
+from{
+transform:translateX(-50%) scale(1);
+}
+to{
+transform:translateX(-50%) scale(1.15);
+}
+}
+
+/* MOBILE */
 
 @media(max-width:700px){
 
-  .passWrap{
-    grid-template-columns:1fr;
-  }
+.passWrap{
+grid-template-columns:1fr;
+}
 
-  .paper p{
-    font-size:24px;
-  }
+.paper p{
+font-size:24px;
+}
 
-  .paper h2{
-    font-size:44px;
-  }
+.paper h2{
+font-size:44px;
+}
 
-  .cakeWrap{
-    transform:scale(.9);
-  }
+.cake-box{
+transform:scale(.9);
+}
+
 }
 
 </style>
@@ -425,294 +421,271 @@ h1,h2{
 
 <body>
 
-<!-- Slide 1 -->
+<!-- SLIDE 1 -->
 
 <section class='slide active' id='s1'>
-  <div class='card'>
-    <h1>Hey Bebdu 🤭</h1>
 
-    <p>Do you want to open your surprise?</p>
+<div class='card'>
 
-    <button class='btn' onclick='go(2)'>
-      Yes 💙
-    </button>
+<h1>Hey Bebdu 🤭</h1>
 
-    <button class='btn alt' id='no'>
-      No 🙈
-    </button>
-  </div>
+<p>Do you want to open your surprise?</p>
+
+<button class='btn' onclick='go(2)'>
+Yes 💙
+</button>
+
+<button class='btn alt' id='no'>
+No 🙈
+</button>
+
+</div>
+
 </section>
 
-<!-- Slide 2 -->
+<!-- SLIDE 2 -->
 
 <section class='slide' id='s2'>
 
-  <div class='card'>
+<div class='card'>
 
-    <div class='passWrap'>
+<div class='passWrap'>
 
-      <div>
-        <div class='stitch'>🩵</div>
+<div>
+<div class='stitch'>🩵</div>
 
-        <div style='font-size:14px'>
-          your stitch is waiting 🤭
-        </div>
-      </div>
+<div style='font-size:14px'>
+your stitch is waiting 🤭
+</div>
+</div>
 
-      <div>
+<div>
 
-        <h2>Enter a passcode</h2>
+<h2>Enter a passcode</h2>
 
-        <div class='dots'>
-          <span class='dot' id='d1'></span>
-          <span class='dot' id='d2'></span>
-          <span class='dot' id='d3'></span>
-          <span class='dot' id='d4'></span>
-        </div>
+<div class='dots'>
+<span class='dot' id='d1'></span>
+<span class='dot' id='d2'></span>
+<span class='dot' id='d3'></span>
+<span class='dot' id='d4'></span>
+</div>
 
-        <div class='pad' id='pad'></div>
+<div class='pad' id='pad'></div>
 
-        <div style='margin-top:10px;font-size:13px'>
-          its our fav code
-        </div>
+<div style='margin-top:10px;font-size:13px'>
+its our fav code
+</div>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
-<!-- Slide 3 -->
+<!-- SLIDE 3 -->
 
 <section class='slide' id='s3'>
 
-  <div class='card cakeCard'>
+<div class='card'>
 
-    <div class="cakeWrap">
+<div class="cake-box">
 
-      <!-- Candles -->
+<!-- CANDLES -->
 
-      <div class="candles">
+<div class="candles">
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+</div>
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+<!-- TOP LAYER -->
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+<div class="top-layer">
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+<div class="top-cream"></div>
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+<div class="sprinkle s1"></div>
+<div class="sprinkle s2"></div>
+<div class="sprinkle s3"></div>
+<div class="sprinkle s4"></div>
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+</div>
 
-      </div>
+<!-- BOTTOM LAYER -->
 
-      <!-- Top Cake -->
+<div class="bottom-layer">
 
-      <div class="topCake">
+<div class="bottom-cream"></div>
 
-        <div class="topCream"></div>
+<div class="sprinkle s5"></div>
+<div class="sprinkle s6"></div>
+<div class="sprinkle s7"></div>
+<div class="sprinkle s8"></div>
 
-        <div class="sprinkle p1"></div>
-        <div class="sprinkle p2"></div>
-        <div class="sprinkle p3"></div>
-        <div class="sprinkle p4"></div>
+</div>
 
-      </div>
+</div>
 
-      <!-- Bottom Cake -->
+<button class='btn' onclick='blow()'>
+BLOW
+</button>
 
-      <div class="bottomCake">
+<div class='msg' id='hb'></div>
 
-        <div class="bottomCream"></div>
-
-        <div class="sprinkle p5"></div>
-        <div class="sprinkle p6"></div>
-        <div class="sprinkle p7"></div>
-        <div class="sprinkle p8"></div>
-
-      </div>
-
-    </div>
-
-    <button class='btn' onclick='blow()'>
-      BLOW
-    </button>
-
-    <div class='msg' id='hb'></div>
-
-  </div>
+</div>
 
 </section>
 
-<!-- Slide 4 -->
+<!-- SLIDE 4 -->
 
 <section class='slide' id='s4'>
 
-  <div class='card'>
+<div class='card'>
 
-    <h2>Something for you 💌</h2>
+<h2>Something for you 💌</h2>
 
-    <p>I made this with love.</p>
+<p>I made this with love.</p>
 
-    <button class='btn letterBtn'
-    onclick="document.getElementById('modal').style.display='flex'">
+<button class='btn letterBtn'
+onclick="document.getElementById('modal').style.display='flex'">
 
-      Open Letter
+Open Letter
 
-    </button>
+</button>
 
-    <button class='btn alt' onclick='go(5)'>
+<button class='btn alt' onclick='go(5)'>
+Next
+</button>
 
-      Next
-
-    </button>
-
-  </div>
+</div>
 
 </section>
 
-<!-- Slide 5 -->
+<!-- SLIDE 5 -->
 
 <section class='slide' id='s5'>
 
-  <h2>Photos of You 📸</h2>
+<h2>Photos of You 📸</h2>
 
-  <div class='gallery'>
+<div class='gallery'>
 
-    <div class='ph'>
-      <img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+1'>
-    </div>
+<div class='ph'>
+<img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+1'>
+</div>
 
-    <div class='ph'>
-      <img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+2'>
-    </div>
+<div class='ph'>
+<img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+2'>
+</div>
 
-    <div class='ph'>
-      <img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+3'>
-    </div>
+<div class='ph'>
+<img src='https://via.placeholder.com/300x380/ffffff/4d95ff?text=Photo+3'>
+</div>
 
-  </div>
+</div>
 
-  <button class='btn'
-  onclick='go(6)'
-  style='margin-top:18px'>
-
-    Next
-
-  </button>
+<button class='btn'
+onclick='go(6)'
+style='margin-top:18px'>
+Next
+</button>
 
 </section>
 
-<!-- Slide 6 -->
+<!-- SLIDE 6 -->
 
 <section class='slide' id='s6'>
 
-  <div class='audioCard'>
+<div class='audioCard'>
 
-    <h2>One Last Thing 🎤</h2>
+<h2>One Last Thing 🎤</h2>
 
-    <audio controls style='width:100%'>
+<audio controls style='width:100%'>
+<source src='voice.mp3'>
+</audio>
 
-      <source src='voice.mp3'>
+<p style='margin-top:10px'>
+Add your voice note as voice.mp3
+</p>
 
-    </audio>
-
-    <p style='margin-top:10px'>
-      Add your voice note as voice.mp3
-    </p>
-
-  </div>
+</div>
 
 </section>
 
-<!-- Letter -->
+<!-- LETTER -->
 
 <div class='modal' id='modal'>
 
-  <div class='paper'>
+<div class='paper'>
 
-    <h2>Happy Birthday, my love ❤️</h2>
+<h2>Happy Birthday, my love ❤️</h2>
 
-    <p>
-      On this day, 1st June 2004, someone was born🤭…
-      someone I didn’t even know back then would one day
-      become the most special person in my life.
-    </p>
+<p>
+On this day, 1st June 2004, someone was born🤭…
+someone I didn’t even know back then would one day become the most special person in my life.
+</p>
 
-    <p>
-      These past 8 months with you have been the most beautiful
-      part of my life 🫶🏻
-    </p>
+<p>
+These past 8 months with you have been the most beautiful part of my life 🫶🏻
+</p>
 
-    <p>
-      You are my yellow person, my sunflower 🌻
-    </p>
+<p>
+You are my yellow person, my sunflower 🌻
+</p>
 
-    <p>
-      I love you more than words can explain…
-    </p>
+<p>
+I love you more than words can explain…
+</p>
 
-    <p style='text-align:right'>
-      <b>Forever yours.</b>
-    </p>
+<p style='text-align:right'>
+<b>Forever yours.</b>
+</p>
 
-    <button class='btn'
-    onclick="document.getElementById('modal').style.display='none'">
+<button class='btn'
+onclick="document.getElementById('modal').style.display='none'">
 
-      Close
+Close
 
-    </button>
+</button>
 
-  </div>
+</div>
 
 </div>
 
 <script>
 
-/* Slide Change */
+/* SLIDES */
 
 function go(n){
 
-  document
-  .querySelectorAll('.slide')
-  .forEach(x=>x.classList.remove('active'));
+document
+.querySelectorAll('.slide')
+.forEach(x=>x.classList.remove('active'));
 
-  document
-  .getElementById('s'+n)
-  .classList.add('active');
+document
+.getElementById('s'+n)
+.classList.add('active');
 }
 
-/* Moving No Button */
+/* FLOATING NO BUTTON */
 
 const no=document.getElementById('no');
 
 no.onmouseover=()=>{
 
-  no.style.left=Math.random()*75+'%';
-  no.style.top=Math.random()*80+'%';
+no.style.left=Math.random()*75+'%';
+no.style.top=Math.random()*80+'%';
+
 };
 
-/* Passcode */
+/* PASSCODE */
 
 const pad=document.getElementById('pad');
 
@@ -728,67 +701,71 @@ add('✓');
 
 function add(v){
 
-  let b=document.createElement('button');
+let b=document.createElement('button');
 
-  b.className='key';
+b.className='key';
 
-  b.textContent=v;
+b.textContent=v;
 
-  b.onclick=()=>press(v);
+b.onclick=()=>press(v);
 
-  pad.appendChild(b);
+pad.appendChild(b);
+
 }
 
 function press(v){
 
-  if(v==='⌫'){
+if(v==='⌫'){
 
-    code=code.slice(0,-1);
+code=code.slice(0,-1);
 
-  }else if(v==='✓'){
+}else if(v==='✓'){
 
-    if(code===pass){
+if(code===pass){
 
-      go(3);
+go(3);
 
-    }else{
+}else{
 
-      code='';
-    }
-
-  }else{
-
-    if(code.length<4){
-
-      code+=v;
-    }
-  }
-
-  for(let i=1;i<=4;i++){
-
-    document.getElementById('d'+i)
-    .className='dot'+(i<=code.length?' fill':'');
-  }
+code='';
 }
 
-/* Blow Candles */
+}else{
+
+if(code.length<4){
+
+code+=v;
+}
+}
+
+for(let i=1;i<=4;i++){
+
+document.getElementById('d'+i)
+.className='dot'+(i<=code.length?' fill':'');
+
+}
+}
+
+/* BLOW CANDLES */
 
 function blow(){
 
-  const flames=document.querySelectorAll('.flame');
+document
+.querySelectorAll('.flame')
+.forEach(f=>{
 
-  flames.forEach(f=>{
+f.classList.add('off');
 
-    f.classList.add('off');
-  });
+});
 
-  const t=document.getElementById('hb');
+const t=document.getElementById('hb');
 
-  t.textContent='Happy Birthday My Bebduu 🤭❤️';
+t.textContent='Happy Birthday My Bebduu 🤭❤️';
 
-  t.classList.add('fadeIn');
+t.classList.add('fadeIn');
 
-  setTimeout(()=>go(4),2600);
+setTimeout(()=>go(4),2600);
+
 }
 
 </script>
